@@ -1,0 +1,191 @@
+@font-face {
+    font-family: play;
+    src: url(fonts/Play-Bold.ttf);
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: play;
+    src: url(fonts/Play-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: vibes;
+    src: url(fonts/GreatVibes-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    display: block;
+    position:relative;
+    margin:0px;
+    header{
+        background-color: burlywood;
+        font-family: play;
+        font-style: normal;
+        font-size: 4vh;
+        nav{
+            #navmenu, #main{
+                list-style: none;
+                margin:0;
+                padding-inline-start: 0px;
+                li{
+                    padding: 0 0.5em 0.1em;
+                    text-align: center;
+                    display: inline-block;
+                }
+            }
+            #main{
+                font-size: 2vh;
+                ul{
+                    padding: 5px 0;
+                    margin-block-start: 0;
+                    margin-block-end: 0;
+                }
+            }
+        }
+    }
+    button{
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 2vh;
+        background-color: burlywood;
+        border-radius: 5px;
+        border-width: 0px;
+    }
+    .show{
+        background-color: bisque;
+    }
+    a{
+        color: inherit;
+        text-decoration: none;
+    }
+    .tile li a{
+        padding: 2px 7px;
+    }
+    .active{
+        color:white;
+        background-color: gray;
+    }
+    p{
+        font-family: play;
+        font-style: normal;
+        color:white;
+    }
+    p.main-text, #logo, #slogan{
+        font-size: 4vh;
+        padding: 0.5em;
+        margin-bottom: 0.5em;
+        margin-top: 0.5em;
+    }
+    #logo{
+        font-family: vibes;
+        font-size: 25vh;
+        font-style: italic;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    #slogan{
+        font-family: vibes;
+        font-style: italic;
+        font-size: 5vh;
+    }
+    .on-screen{
+        display: flex;
+    }
+    .hidden{
+        display: none;
+    }
+    div{
+        display: block;
+        position: relative;
+    }
+    div.gallery-layout{
+        div.gallery{
+            div.image-form{
+                img.image{
+                    block-size: 40vh;
+                    max-block-size: 40vh;
+                    max-inline-size: 40vw;
+                    object-fit: cover;
+                }
+                p.description{
+                    position:absolute;
+                    left:0;
+                    top:0;
+                    margin-block-start: 0;
+                    margin-block-end: 0;
+                    padding-left: 10px;
+                    padding-top: 10px;
+                    width: calc(100% - 10px);
+                    height: calc(40vh - 10px);
+                    font-size: 1em;
+                    background: rgba(0, 0, 0, 0.7);
+                }
+            }
+            div.image-form:hover{
+                p.description{
+                    display: block;
+                }
+            }
+        }
+        
+    }
+    button.control-button{
+        appearance: none;
+    }
+    #viewer{
+        border-width: 0;
+        .interface{
+            #viewed-image{
+                max-block-size: 80vh;
+                max-inline-size: 80vw;
+                object-fit: contain;
+                margin: 40px;
+                margin-bottom: 0;
+            }
+            #prev, #next, #close{
+                position:absolute;
+                inline-size: 40px;
+                block-size: 40px;
+                background-color: transparent;
+                background-repeat: no-repeat;
+                background-size: contain;
+                }
+            #prev{
+                left: 0;
+                bottom: 50%;
+                background-image: url(images/arrow.svg);
+            }
+            #next{
+                right: 0;
+                bottom: 50%;
+                background-image: url(images/arrow.svg);
+                transform: rotate(180deg);
+            }
+            #close{
+                right: 0;
+                top: 0;
+                background-image: url(images/cross.svg);
+            }
+        }
+    }
+    #viewer::backdrop{
+        background: rgba(0, 0, 0, 0.7);
+    }
+    main.mainlayout{
+        height:95vh;
+        background-image: url(images/mainlayout.JPG);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    div.mainlayout-text{
+        height:95vh;
+        width: 100vw;
+        position:absolute;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.7);
+    }
+}
