@@ -18,7 +18,6 @@
 }
 body{
     display: block;
-    position:relative;
     margin:0px;
     header{
         background-color: burlywood;
@@ -27,7 +26,6 @@ body{
         font-size: 4vh;
         nav{
             #navmenu, #main{
-                list-style: none;
                 margin:0;
                 padding-inline-start: 0px;
                 li{
@@ -45,6 +43,13 @@ body{
                 }
             }
         }
+    }
+    h1, h2{
+        font-family: play;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.5em;
+        margin-block: 0;
     }
     button{
         cursor: pointer;
@@ -71,9 +76,11 @@ body{
     p{
         font-family: play;
         font-style: normal;
-        color:white;
+        margin-block-start: 0;
+        margin-block-end: 0;
     }
     p.main-text, #logo, #slogan{
+        color:white;
         font-size: 4vh;
         padding: 0.5em;
         margin-bottom: 0.5em;
@@ -101,6 +108,35 @@ body{
         display: block;
         position: relative;
     }
+    div.article{
+        display: flex;
+        height: calc(95vh - 0.5em);
+        padding-top: 0.5em;
+        aside{
+            background-color: bisque;
+            h2{
+                padding: 0 5px;
+            }
+        }
+        article{
+            margin: 0 1em 0;
+            div.head{
+                margin-bottom: 0.5em;
+            }
+            div.info{
+                background: rgba(0, 0, 0, 0.2);
+                padding: 5px;
+                margin-bottom: 0.5em;
+                overflow: hidden;
+                .date{
+                    float: left;
+                }
+                .author{
+                    float: right;
+                }
+            }
+        }
+    }
     div.gallery-layout{
         div.gallery{
             div.image-form{
@@ -121,6 +157,7 @@ body{
                     width: calc(100% - 10px);
                     height: calc(40vh - 10px);
                     font-size: 1em;
+                    color:white;
                     background: rgba(0, 0, 0, 0.7);
                 }
             }
