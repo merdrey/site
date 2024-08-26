@@ -41,9 +41,9 @@
         main.gallery{
             height: inherit;
             min-height: calc(100vh - 21.75px);
-            background-size: auto calc(100vh - 21.75px);
+            background-size: cover;
+            background-position: center;
             background-repeat: repeat;
-            background-position-x: center;
         }
         #viewer{
             .interface{
@@ -60,9 +60,9 @@
             flex-direction: column;
             height: inherit;
             min-height: calc(100vh - 21.75px);
-            background-size: auto calc(100vh - 21.75px);
+            background-size: cover;
+            background-position: center;
             background-repeat: repeat;
-            background-position-x: center;
             aside{
                 flex-grow: 0;
             }
@@ -129,7 +129,6 @@
         main.gallery{
             height: inherit;
             min-height: calc(100vh - 50px);
-            background-size: auto calc(100vh - 50px);
         }
         #viewer{
             .interface{
@@ -145,7 +144,6 @@
         main.article{
             height: inherit;
             min-height: calc(100vh - 50px);
-            background-size: auto calc(100vh - 50px);
             aside{
                 flex-grow: 0;
             }
@@ -288,7 +286,6 @@
         }
         main.gallery{
             height: inherit;
-            background-size: cover;
         }
         #viewer{
             .interface{
@@ -303,7 +300,6 @@
         }
         main.article{
             height: inherit;
-            background-size: cover;
             flex-direction: row;
             aside{
                 flex-grow: 1;
@@ -320,7 +316,7 @@
                 }
             }
             article{
-                padding: 0.5em 1em;
+                padding: 1.4em 1em;
                 flex-grow: 1;
             }
         }
