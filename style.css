@@ -53,12 +53,21 @@ body{
                 li{
                     text-align: center;
                     display: inline-block;
+                    transition: background-color 0.4s;
                 }
+            }
+            #navmenu li:hover{
+                background-color: bisque;
             }
             #main{
                 padding: 5px 0;
                 li{
                     margin-left: 4.5px;
+                }
+                li:hover{
+                    color:white;
+                    background-color: gray;
+                    border-radius: 5px;
                 }
             }
         }
@@ -130,6 +139,17 @@ body{
                         list-style: none;
                         li{
                             padding: 0.25em 0;
+                            transition: background-color 0.2s;
+                            a{
+                                display: block;
+                            }
+                        }
+                        li:hover{
+                            color:white;
+                            background-color: gray;
+                            padding-left: 10px;
+                            margin-left: -25px;
+                            border-radius: 0;
                         }
                         li.active{
                             padding-left: 10px;
@@ -139,9 +159,9 @@ body{
                     }
                     li.parent{
                         padding: 0.5em 0;
+                        cursor: pointer;
                     }
                     li span.parent{
-                        cursor: pointer;
                         position: absolute;
                         display: block;
                         margin-left: -15px;

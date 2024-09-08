@@ -11,6 +11,8 @@ const DETECT_THRESHOLD = 70
 
 let counter, folders = GALLERY.querySelectorAll("div.folder"), images, xCoord
 
+let isMobile = DetectDevice();
+
 function showViewer() {
     folders.forEach((folder) => {
         observer.observe(folder.querySelector("img.icon"))
@@ -22,6 +24,11 @@ function showViewer() {
             VIEWER.showModal()
         })
     });  
+}
+
+if(!isMobile) {
+    NEXT_BUTTON.style.setProperty("display", "block");
+    PREV_BUTTON.style.setProperty("display", "block");
 }
 
 VIEW_IMAGE.addEventListener('touchstart', handleTouchStart)
@@ -99,5 +106,14 @@ const options = {
 }
 
 const observer = new IntersectionObserver(callback, options)
+
+function DetectDevice() {
+    let isMobile = window.matchMedia;
+    if(isMobile) {
+        let match_mobile = isMobile("(pointer:coarse)");
+        return match_mobile.matches;
+    }
+    return false;
+}
 
 GALLERY.addEventListener('load', showViewer())

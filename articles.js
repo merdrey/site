@@ -1,8 +1,9 @@
-const lists = document.querySelectorAll("div.navigation>ul>li")
+const lists = document.querySelectorAll("div.navigation>ul>li.parent")
 
 lists.forEach((list) => {
     let button = list.querySelector("span")
-    button.addEventListener('click', () => {
+    let div = list.querySelector("div")
+    div.addEventListener('click', () => {
         if(button.classList.contains("closed")) {
             button.classList.replace("closed", "open")
             list.querySelector("ul").classList.remove("hidden")
