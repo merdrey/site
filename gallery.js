@@ -19,8 +19,8 @@ function showViewer() {
         folder.addEventListener('click', () =>
         {
             counter = 0
-            images = folder.querySelectorAll("img")
-            VIEW_IMAGE.setAttribute("src", folder.querySelector("img.icon").getAttribute("src"))
+            images = folder.querySelectorAll("img.hidden")
+            VIEW_IMAGE.setAttribute("src", folder.querySelector("img.hidden").getAttribute("src"))
             VIEWER.showModal()
         })
     });  
@@ -92,7 +92,7 @@ CLOSE_BUTTON.onclick = function() {
 
 const callback = (entries, observer) => {
     entries.forEach((entry) => {
-        if(entry.isIntersecting && entry.target.src == "") {
+        if(entry.isIntersecting) {
             entry.target.setAttribute("src", entry.target.getAttribute("data-src"))
             observer.unobserve(entry.target)
         }
