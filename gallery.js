@@ -19,6 +19,11 @@ function showViewer() {
         {
             counter = 0
             images = folder.querySelectorAll("img")
+            images.forEach((image) => {
+                if(image.getAttribute("src") == undefined) {
+                    image.setAttribute("src", image.getAttribute("data-src"))
+                }
+            })
             VIEW_IMAGE.setAttribute("src", folder.querySelector("img.icon").getAttribute("src"))
             VIEWER.showModal()
         })
