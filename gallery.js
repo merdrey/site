@@ -15,12 +15,11 @@ let isMobile = DetectDevice();
 
 function showViewer() {
     folders.forEach((folder) => {
-        observer.observe(folder.querySelector("img.icon"))
         folder.addEventListener('click', () =>
         {
             counter = 0
-            images = folder.querySelectorAll("img.hidden")
-            VIEW_IMAGE.setAttribute("src", folder.querySelector("img.hidden").getAttribute("src"))
+            images = folder.querySelectorAll("img")
+            VIEW_IMAGE.setAttribute("src", folder.querySelector("img.icon").getAttribute("src"))
             VIEWER.showModal()
         })
     });  
@@ -92,7 +91,7 @@ CLOSE_BUTTON.onclick = function() {
 
 const callback = (entries, observer) => {
     entries.forEach((entry) => {
-        if(entry.isIntersecting) {
+        if(entry.isIntersecting && entry.target.getAttribute("src") == undefined) {
             entry.target.setAttribute("src", entry.target.getAttribute("data-src"))
             observer.unobserve(entry.target)
         }
@@ -117,3 +116,6 @@ function DetectDevice() {
 }
 
 GALLERY.addEventListener('load', showViewer())
+folders.forEach((folder) => {
+    observer.observe(folder.querySelector("img.icon"))
+})
